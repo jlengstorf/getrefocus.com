@@ -1,0 +1,79 @@
+.time-left {
+  font-size: 18px;
+  line-height: 45px;
+
+  @media (min-width: 480px) {
+    font-size: 22px;
+  }
+
+  &__description {
+    display: none;
+    margin-right: 1em;
+    vertical-align: middle;
+    font-family: 'Gotham Ssm A', 'Gotham Ssm B', sans-serif;
+    font-size: 8px;
+    font-weight: 300;
+    line-height: 1.25;
+    text-transform: uppercase;
+
+    strong {
+      color: $color-pop;
+      font-weight: 500;
+    }
+
+    @media (min-width: 570px) {
+      display: inline-block;
+    }
+
+    @media (min-width: 650px) {
+      font-size: 10px;
+    }
+
+    @media (min-width: 880px) {
+      line-height: 50px;
+    }
+  }
+
+  &__days,&__hours,&__minutes,&__seconds {
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    vertical-align: middle;
+
+    &::before {
+      position: absolute;
+      bottom: 15%;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 6px;
+      font-weight: 300;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+  }
+
+  &__days {
+    margin-right: 0.25em;
+    &::before {
+      content: 'Day';
+    }
+  }
+
+  &__hours::before {
+    content: 'Hour';
+  }
+
+  &__minutes::before {
+    content: 'Min';
+  }
+
+  &__seconds::before {
+    content: 'Sec';
+  }
+
+  &__hide-on-large-viewports {
+    @media (min-width: 880px) {
+      display: none;
+    }
+  }
+}

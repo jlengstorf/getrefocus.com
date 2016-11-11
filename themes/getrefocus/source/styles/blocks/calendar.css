@@ -1,0 +1,81 @@
+.calendar {
+  @mixin section;
+  background: color( $color-pop tint(95%) );
+  border-bottom: 1px solid color( $color-pop tint(80%) );
+  border-top: 1px solid color( $color-pop tint(80%) );
+  text-align: center;
+
+  &__lede {
+    font-weight: 500;
+    text-align: center;
+
+    @media (min-width: 768px) {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__days {
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__day {
+    margin-top: 0;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid color( $color-pop tint(75%) );
+
+    &:last-of-type {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    @media (min-width: 840px) {
+      display: inline-block;
+      max-width: 375px;
+      padding-top: 30px;
+      border-bottom: 0;
+      border-top: 1px solid color( $color-pop tint(75%) );
+      vertical-align: top;
+
+      &:nth-child(odd) {
+        padding-right: calc( $margin-default * 2 );
+      }
+
+      &:nth-child(even) {
+        padding-left: calc( $margin-default * 2 );
+      }
+    }
+  }
+
+  &__day-date {
+    color: $color-pop;
+    font-size: 80%;
+    text-align: center;
+    text-transform: uppercase;
+
+    &::before {
+      content: '';
+      display: block;
+      height: 50px;
+      margin-bottom: 10px;
+      background-image: url(/images/date.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+  }
+
+  &__day-heading {
+    margin-top: calc( $margin-default / 2);
+    font-size: 130%;
+    font-weight: 900;
+    line-height: 1.25;
+    text-align: center;
+  }
+
+  &__day-description {
+    text-align: center;
+  }
+}

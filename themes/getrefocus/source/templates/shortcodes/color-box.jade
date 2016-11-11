@@ -1,0 +1,16 @@
+| {{ if .Inner }}
+| {{ $alt := .Get "heading" | printf "%s: %s" (.Get "number") }}
+| {{ $icon := .Get "icon" }}
+.color-boxes__box
+  figure.color-boxes__box-icon-wrapper
+    img.color-boxes__box-icon(
+      src="{{ $icon }}"
+      alt="{{ $alt }}"
+    )
+    figcaption.color-boxes__box-caption
+      | {{ .Get "number" }}
+  h3.color-boxes__subheading
+    | {{ .Get "heading" }}
+  .color-boxes__body-copy
+    | {{ .Inner }}
+| {{ end }}

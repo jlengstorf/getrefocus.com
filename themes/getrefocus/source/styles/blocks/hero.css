@@ -1,0 +1,97 @@
+.hero {
+  padding: 80px 5vw 80px;
+  background-image: url(/images/header-tile.svg);
+  background-size: 120px;
+  background-position: center;
+  border-bottom: 1px solid $color-pop;
+
+  &__heading,h1 {
+    color: $color-main;
+    font-size: 6vw;
+    font-weight: 900;
+    line-height: 1.1;
+    text-align: center;
+    text-shadow: 0.5vw 0.5vw 0 color( $color-text-dark alpha(20%) );
+    text-transform: uppercase;
+  }
+
+  &__subheading,h2,h3 {
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+    color: color( $color-text-dark tint(10%) );
+    font-size: 4.5vw;
+    line-height: 1.25;
+    text-align: center;
+    text-shadow: 1px 1px 0 color( $color-text-dark alpha(20%) );
+  }
+
+  &__lede {
+    max-width: 750px;
+    margin-top: calc( $margin-default * 3 );
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  &__button,a[href="#opt-in"] {
+    @mixin button;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 2.75vw;
+    font-size: 5vw;
+  }
+
+  &__desktop-only {
+    display: none;
+  }
+
+  @media (min-width: 480px) {
+    /*&__heading,h1 {
+      font-size: 5vw;
+    }*/
+
+    &__subheading,h2 {
+      font-size: 3.5vw;
+    }
+
+    &__button,a[href="#opt-in"] {
+      max-width: 350px;
+      padding-top: 2vw;
+      font-size: 4vw;
+    }
+  }
+
+  @media (min-width: 768px) {
+    &__heading,h1 {
+      max-width: 750px;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 275%;
+      text-shadow: 3px 3px 0 color( $color-text-dark alpha(20%) );
+    }
+
+    &__subheading,h2 {
+      max-width: 750px;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 145%;
+    }
+
+    &__subheading--wider {
+      max-width: 775px;
+    }
+
+    &__button,a[href="#opt-in"] {
+      max-width: 350px;
+      padding-top: calc( $margin-default * 1 );
+      margin-top: calc( $margin-default * 3 );
+      font-size: 150%;
+    }
+
+    &__desktop-only {
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,152 @@
+.opt-in {
+  padding: 5vw;
+  background: color( $color-background tint(80%) );
+  border: 1px solid $color-accent-dark;
+
+  &.js__is-popover {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    border: 0;
+    transition: 200ms opacity linear;
+  }
+
+  &--fade-out {
+    opacity: 0;
+  }
+
+  &--hidden {
+    position: absolute;
+    top: -1;
+    left: -1;
+    width: 0;
+    height: 0;
+    display: none;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  &__heading {
+    margin-top: 20px;
+    color: $color-main;
+    font-size: 130%;
+    line-height: 1.125;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  &__lede {
+    color: color( $color-accent-dark saturation(- 50%) );
+    font-size: 100%;
+    text-align: center;
+
+    strong {
+      color: $color-text-dark;
+    }
+  }
+
+  &__input-group {
+    margin-top: calc( $margin-default * 1.5 );
+
+    &+& {
+      margin-top: $margin-default;
+    }
+  }
+
+  &__label {
+    display: block;
+    color: $color-accent-dark;
+    font-size: 75%;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+
+  &__input {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 2vw;
+    background: $color-background;
+    border: 1px solid $color-accent-dark;
+    font-size: 16px;
+    transition: 200ms all linear;
+
+    &:active,&:focus {
+      background: color( $color-accent-light tint(70%) );
+      border-color: $color-pop;
+      outline: 0;
+    }
+
+    &:hover {
+      background: color( $color-accent-light tint(70%) );
+    }
+  }
+
+  &__submit {
+    @mixin button;
+  }
+
+  &__privacy-notice {
+    margin-top: calc( $margin-default / 2 );
+    color: color( $color-accent-dark saturation(- 50%) lightness(+ 20%) );
+    font-size: 62.5%;
+    text-align: center;
+  }
+
+  /*
+   * The close button is added by `popover.js`. It's only visible when the
+   * opt-in is being used as a popover.
+   */
+  .js__close-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    margin-right: 3vw;
+    padding: 10px 2vw;
+    color: color( $color-accent-dark saturation(- 50%) lightness(+ 20%) );
+    font-size: 100%;
+    line-height: 1;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    &::before {
+      content: 'close';
+      margin-right: 3px;
+      font-size: 75%;
+      vertical-align: bottom;
+    }
+  }
+
+
+  @media (min-width: 480px) {
+    &__heading {
+      font-size: 150%;
+    }
+
+    &__input {
+      padding: $margin-default;
+    }
+
+    .js__close-button {
+      &::before {
+        font-size: 80%;
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    &__heading,&__lede,&__form {
+      max-width: 750px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .js__close-button {
+      margin-top: 10px;
+    }
+  }
+}

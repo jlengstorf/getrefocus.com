@@ -1,0 +1,28 @@
+.site-content {
+  margin-top: 0;
+
+  &__section {
+    @mixin section;
+
+    .sales-page &.body-copy {
+      padding: 30px 5vw;
+
+      @media (min-width: 768px) {
+        padding-bottom: 40px;
+        padding-top: 40px;
+      }
+    }
+  }
+
+  >:last-child {
+    margin-bottom: 10vh;
+  }
+
+  /*
+   * Hugo generates some empty paragraphs. Rather than try to fix their parser,
+   * just hide them.
+   */
+  p:empty {
+    display: none;
+  }
+}

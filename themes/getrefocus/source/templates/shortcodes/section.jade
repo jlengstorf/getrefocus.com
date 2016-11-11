@@ -1,0 +1,5 @@
+| {{ if .Inner }}
+|   {{ $class := .Get "type" }}
+.site-content__section(class!="{{ $class }}")
+  | {{ .Inner }}
+| {{ end }}

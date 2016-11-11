@@ -1,0 +1,3 @@
+{{ if .Inner }}
+{{ $alt := .Get "heading" | printf "%s: %s" (.Get "number") }}
+{{ $icon := .Get "icon" }}<div class="color-boxes__box"><figure class="color-boxes__box-icon-wrapper"><img src="{{ $icon }}" alt="{{ $alt }}" class="color-boxes__box-icon"/><figcaption class="color-boxes__box-caption">{{ .Get "number" }}</figcaption></figure><h3 class="color-boxes__subheading">{{ .Get "heading" }}</h3><div class="color-boxes__body-copy">{{ .Inner }}</div></div>{{ end }}

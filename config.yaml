@@ -1,0 +1,10 @@
+---
+baseURL: "https://getrefocus.com/"
+defaultLayout: "page"
+disableRSS: true
+languageCode: "en-us"
+metaDataFormat: "yaml"
+publishDir: "dist"
+theme: "getrefocus"
+title: "The Refocus System"
+---

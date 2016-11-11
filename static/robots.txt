@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /bootcamp/go/
+Disallow: /bootcamp/confirmed/
+Disallow: /downloads/

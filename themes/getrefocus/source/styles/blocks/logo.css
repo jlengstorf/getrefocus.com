@@ -1,0 +1,33 @@
+.logo {
+  display: block;
+  max-width: 100%;
+  width: 140px;
+  margin: 0 2.5vw;
+  padding: 2.125vw 0;
+  background-image: url(/images/refocus-logo.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  color: color( $color-text-light alpha(0%) );
+  font-size: 120%;
+  font-weight: 900;
+  line-height: 1;
+  text-decoration: none;
+  /*text-shadow: 1px 1px 0 $color-accent-dark;*/
+  text-transform: uppercase;
+
+  @media (min-width: 480px) {
+    padding: 1.5vw;
+    padding-left: 5vw;
+  }
+
+  @media (min-width: 768px) {
+    padding: $margin-default;
+    padding-left: 5vw;
+  }
+}
+
+/* Bootcamp Hack */
+.site-header--bootcamp .logo {
+  background-image: url(/images/refocus-bootcamp-logo.svg);
+}

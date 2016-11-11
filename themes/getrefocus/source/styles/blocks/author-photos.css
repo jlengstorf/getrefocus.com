@@ -1,0 +1,15 @@
+.author-photos {
+  text-align: center;
+
+  &__headshot {
+    display: inline-block;
+    max-width: 100px;
+    margin-left: 20px;
+    border: 1px solid $color-main;
+    border-radius: 50%;
+
+    &:first-of-type {
+      margin-left: 0;
+    }
+  }
+}

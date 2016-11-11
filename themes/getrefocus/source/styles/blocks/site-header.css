@@ -1,0 +1,31 @@
+.site-header {
+  position: relative;
+  display: flex;
+  padding-top: 0.125rem;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 4px solid $color-pop;
+  border-bottom: 4px solid $color-accent-dark;
+  box-shadow: 0 2px 4px color( $color-main alpha(25%) );
+
+  &::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $color-main;
+    border-top: 2px solid $color-background;
+    border-bottom: 2px solid $color-accent-light;
+    z-index: -1;
+  }
+
+  &__logo {
+    flex: 1 33%;
+  }
+
+  &__main-nav {
+    flex: 2 66%;
+  }
+}

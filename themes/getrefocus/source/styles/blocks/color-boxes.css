@@ -1,0 +1,77 @@
+.color-boxes {
+
+  >h2,>h3 {
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__box {
+    max-width: 750px;
+    margin: 160px auto 0;
+    padding: 0 5vw 2em;
+    background-color: color( $color-pop tint(90%) );
+    border: 2px solid $color-pop;
+    border-radius: 10px;
+
+    &-icon-wrapper {
+      max-width: 160px;
+      margin: -80px auto 0;
+    }
+
+    &-caption {
+      margin-top: calc( $margin-default / 2 );
+      color: $color-pop;
+      font-size: 110%;
+      font-weight: 500;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    @media (min-width: 480px) {
+      padding: 0 3em 3em;
+
+      &-icon-wrapper {
+        max-width: 200px;
+        margin-top: -100px;
+      }
+    }
+  }
+
+  &--habit &__box {
+    &:first-child {
+      margin-top: 50px;
+    }
+  }
+
+  &__subheading {
+    margin-top: calc( $margin-default / 2 );
+    font-size: 145%;
+    font-weight: 500;
+    line-height: 1.1;
+    text-align: center;
+    text-transform: uppercase;
+
+    @media (min-width: 480px) {
+      font-size: 205%;
+    }
+  }
+
+  &--mistake &__box {
+    background-color: color( $color-pop tint(90%) );
+    border: 2px solid $color-pop;
+
+    &-caption {
+      color: $color-pop;
+    }
+  }
+
+  &--habit &__box {
+    background-color: color( $color-accent-light tint(80%) );
+    border: 2px solid $color-main;
+
+    &-caption {
+      color: $color-main;
+    }
+  }
+}

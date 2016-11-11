@@ -1,0 +1,53 @@
+-
+  var navItems = [
+    {
+      id: 'day1',
+      date: 'April 11',
+      part: 'Lesson 1',
+      title: 'Build Your Own Compass',
+      link: '../day-1-compass/',
+      open: true,
+    },
+    {
+      id: 'day2',
+      date: 'April 13',
+      part: 'Lesson 2',
+      title: 'Make Life a Tournament',
+      link: '../day-2-tournament/',
+      open: true,
+    },
+    {
+      id: 'day3',
+      date: 'April 15',
+      part: 'Lesson 3',
+      title: 'Own the First Hour',
+      link: '../day-3-first-hour/',
+      open: true,
+    },
+    {
+      id: 'mainevent',
+      date: 'April 18',
+      part: 'Main Event',
+      title: 'LIVE Hangout + Q&A',
+      link: 'https://attendee.gotowebinar.com/register/5000283488213998082',
+      open: false,
+    },
+  ];
+-
+
+ul.bootcamp-nav
+  for item in navItems
+    -
+      var tagName = item.open ? 'a' : 'span';
+      var className = item.open ? '' : 'bootcamp-nav__link--coming-soon';
+      var classes = `${className} {{ if eq (.Get "current") "${item.id}" }}bootcamp-nav__link--current{{ end }}`;
+      var href = item.open ? item.link : false
+    -
+    li.bootcamp-nav__item
+      #{tagName}.bootcamp-nav__link(
+        class!= classes
+        href= href
+      ) 
+        em.bootcamp-nav__day #{item.date}
+          span.bootcamp-nav__part #{item.part}
+        strong.bootcamp-nav__title= item.title
