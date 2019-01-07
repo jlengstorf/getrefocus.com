@@ -19,7 +19,7 @@ const optInPopover = new Popover({
   buttonSelector: 'a[href="#opt-in"]',
   transitionClasses: {
     animate: 'opt-in--fade-out',
-    hide: 'opt-in--hidden',
+    hide: 'opt-in--hidden'
   }
 });
 
@@ -30,4 +30,4 @@ setTimeout(() => {
   enableTranscriptToggle('body-copy--collapsible', true);
 }, 1000);
 
-timer('time-left', '2016-04-23T00:00:00-04:00');
+timer('time-left', '2019-01-25T00:00:00-04:00');
