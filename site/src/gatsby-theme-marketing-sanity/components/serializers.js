@@ -1,7 +1,6 @@
 import React from 'react';
-// import { Styled } from "theme-ui"
 import BlockRenderer from 'gatsby-theme-marketing-sanity/src/components/block-renderer';
-import Hero from './hero';
+import Hero from '../../components/hero';
 
 export default {
   container: React.Fragment,
